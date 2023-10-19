@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load my_filters %}
+{% load static %}
+
+{% block title %}
+    {{series_title}}
+{% endblock %}
+
+{% block css_additional %}
+    <link rel="stylesheet" href=" {% static 'bmw_description/css/gallery.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="content gallery">
+        {% for image in images %}
+            <div class="gallery-item">
+                <img src="{% static 'images/gallery/'|add:image %}" alt="Gallery Image" class="car_image">
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

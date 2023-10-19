@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    BMW Cars
+{% endblock %}
+
+{% block content %}
+    {%for key, value in series_dict.items%}
+        <ul>
+            <li>
+                <h3><a href="{% url 'series_name_path' series_name=key %}">{{value.0}}</a></h3>
+                <p>{{value.1}}</p>
+            </li>
+
+        </ul>
+    {%endfor%}
+{% endblock %}

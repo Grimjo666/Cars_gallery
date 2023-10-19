@@ -1,0 +1,28 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.gallery-item {
+    margin: 10px;
+    flex: 0 1 calc(33.33% - 20px); /* 3 изображения в ряд на больших экранах (flex-basis: 33.33%) */
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 0 1 calc(50% - 20px); /* 2 изображения в ряд на средних экранах */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        flex: 0 1 calc(100% - 20px); /* 1 изображение в ряд на мобильных экранах */
+    }
+}
+.car_image {
+    max-width: 100%; /* Устанавливаем максимальную ширину изображения в процентах от родительского контейнера */
+    height: auto; /* Автоматически подстраиваем высоту для сохранения пропорций */
+
+}

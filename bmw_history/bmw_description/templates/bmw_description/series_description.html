@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load my_filters %}
+{% load static %}
+
+{% block title %}
+    {{series_title}}
+{% endblock %}
+
+{% block content %}
+    <h1>{{series_dict|get:series_name|first}}</h1>
+    <img src="{% static 'images/'|add:series_name|add:'/main.png' %}" class="main_image">
+    <p>{{series_dict|get:series_name|get:1}}</p>
+{% endblock %}
